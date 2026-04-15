@@ -589,7 +589,7 @@ function camelCase(input, options) {
 	return postProcess(input, toUpperCase);
 }
 
-var name = "create-react-component";
+var name = "@zxx_npm/create-react-component";
 var version = "1.0.0";
 
 const {program} = require('commander');

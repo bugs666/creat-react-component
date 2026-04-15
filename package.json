@@ -1,5 +1,5 @@
 {
-  "name": "create-react-component",
+  "name": "@zxx_npm/create-react-component",
   "version": "1.0.0",
   "description": "",
   "main": "./dist/index.js",
