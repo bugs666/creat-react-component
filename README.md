@@ -1,19 +1,19 @@
 # Creat-React-Component
 
-一个用于快速生成 React 组件的命令行工具，支持生成普通组件和页面组件，并可以选择生成 TypeScript 或 JavaScript 文件。
+一个用于快速生成 React 组件的命令行工具，支持生成普通组件和页面组件，并可以选择生成 TypeScript 或 JavaScript 文件，以及 `scss` / `less` 模块化样式文件。
 
 ## 安装
 
 全局安装该工具：
 
 ```bash
-npm install -g your-package-name
+npm install -g create-react-component
 ```
 
 或者使用 `npx` 直接运行：
 
 ```bash
-npx your-package-name generate MyComponent
+npx create-react-component generate MyComponent
 ```
 
 ## 使用
@@ -50,12 +50,28 @@ rcc generate MyComponent --typescript
 rcc generate MyComponent --javascript
 ```
 
+### 生成带样式文件的组件
+
+生成一个带 `scss` 模块样式的普通组件：
+
+```bash
+rcc generate MyComponent --scss
+```
+
+生成一个带 `less` 模块样式的页面组件：
+
+```bash
+rcc generate MyPage --page --less
+```
+
 ## 选项
 
 | 选项              | 描述                          |
 |-------------------|-------------------------------|
 | `-p, --page`      | 生成页面组件                  |
 | `-c, --component` | 生成普通组件（默认）          |
+| `-s, --scss`      | 生成 `index.module.scss` 文件 |
+| `-l, --less`      | 生成 `index.module.less` 文件 |
 | `-t, --typescript`| 生成 TypeScript 文件          |
 | `-j, --javascript`| 生成 JavaScript 文件          |
 
@@ -73,24 +89,37 @@ rcc generate MyPage --page --typescript
 rcc generate MyComponent --javascript
 ```
 
+### 生成一个带 scss 的 TypeScript 组件
+
+```bash
+rcc generate MyComponent --typescript --scss
+```
+
 ## 项目结构
 
 生成的组件结构如下：
 
-### 普通组件
+### 普通组件（以 `--scss` 为例）
 
 ```
 MyComponent/
 ├── index.jsx
-└── index.js
+└── index.module.scss
 ```
 
-### 页面组件
+如果当前目录不存在 `index.ts`，工具会自动创建一个，并追加：
+
+```ts
+export * from './MyComponent';
+```
+
+### 页面组件（以 `--less` 为例）
 
 ```
 MyPage/
 ├── components/
 │   └── index.js
+├── index.module.less
 ├── services/
 │   └── index.js
 └── index.jsx

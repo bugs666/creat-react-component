@@ -1,8 +1,11 @@
 import React from 'react';
+{{#if hasStylesheet}}
+import styles from '{{stylesheetImportPath}}';
+{{/if}}
 
 export const {{componentName}} = () => {
     return (
-        <div>
+        <div{{{stylesheetContainerProps}}}>
             <h1>{{componentName}}</h1>
         </div>
     );

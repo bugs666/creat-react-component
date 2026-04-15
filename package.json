@@ -1,5 +1,5 @@
 {
-  "name": "creat-react-component",
+  "name": "create-react-component",
   "version": "1.0.2",
   "description": "",
   "main": "./dist/index.js",
@@ -7,7 +7,8 @@
     "rcc": "./dist/index.js"
   },
   "scripts": {
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "postbuild": "chmod 755 dist/index.js"
   },
   "repository": {
     "type": "git",
