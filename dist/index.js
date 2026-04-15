@@ -590,7 +590,7 @@ function camelCase(input, options) {
 }
 
 var name = "create-react-component";
-var version = "1.0.2";
+var version = "1.0.0";
 
 const {program} = require('commander');
 const fs = require('fs');
